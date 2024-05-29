@@ -8,6 +8,9 @@ if (SCCACHE)
     set(CMAKE_CXX_COMPILER_LAUNCHER ${SCCACHE} CACHE INTERNAL "")
 endif()
 
+message(STATUS ${CMAKE_CXX_COMPILER_ID})
+message(STATUS ${CMAKE_CXX_COMPILER_VERSION})
+
 add_subdirectory(JUCE)
 juce_add_console_app(sccache-juce)
 target_sources(sccache-juce PRIVATE main.cpp)
